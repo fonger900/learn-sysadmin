@@ -37,6 +37,18 @@
             <p>&copy; {% now "Y" %} Learn Sysadmin. All systems operational.</p>
         </footer>
     </div>
+    <script>
+        // Wrap tables in article-body for horizontal scrolling
+        document.addEventListener('DOMContentLoaded', () => {
+            const tables = document.querySelectorAll('.article-body table');
+            tables.forEach(table => {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'table-wrapper';
+                table.parentNode.insertBefore(wrapper, table);
+                wrapper.appendChild(table);
+            });
+        });
+    </script>
 </body>
 
 </html>
