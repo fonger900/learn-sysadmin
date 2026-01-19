@@ -1,5 +1,6 @@
 ---
 title: 4. Core Protocols
+order: 4
 date: 2026-02-04
 ---
 # Core Protocols

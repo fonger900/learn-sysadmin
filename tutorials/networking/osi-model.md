@@ -1,5 +1,6 @@
 ---
 title: 2. The OSI Model
+order: 2
 date: 2026-02-02
 ---
 # The OSI Model

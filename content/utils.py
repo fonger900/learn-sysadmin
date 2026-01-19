@@ -19,6 +19,7 @@ class FileArticle:
     topic_slug: str
     body: str
     published_date: datetime
+    order: int
 
 class ContentLoader:
     CONTENT_DIR = os.path.join(settings.BASE_DIR, 'tutorials')
@@ -73,11 +74,12 @@ class ContentLoader:
                 slug=article_slug,
                 topic_slug=topic_slug,
                 body=data.content,
-                published_date=data.get('date', datetime.now())
+                published_date=data.get('date', datetime.now()),
+                order=data.get('order', 999)
             ))
             
-        # Sort by slug or date essentially (simple sort for now)
-        return sorted(articles, key=lambda x: x.slug)
+        # Sort by order then slug
+        return sorted(articles, key=lambda x: (x.order, x.slug))
 
     @classmethod
     def get_article(cls, topic_slug: str, article_slug: str) -> Optional[FileArticle]:
@@ -91,5 +93,6 @@ class ContentLoader:
             slug=article_slug,
             topic_slug=topic_slug,
             body=data.content,
-            published_date=data.get('date', datetime.now())
+            published_date=data.get('date', datetime.now()),
+            order=data.get('order', 999)
         )

@@ -1,5 +1,6 @@
 ---
 title: 1. Networking Basics
+order: 1
 date: 2026-02-01
 ---
 # Networking Basics

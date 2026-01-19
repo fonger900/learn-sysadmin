@@ -1,5 +1,6 @@
 ---
 title: 5. Network Diagnostic Tools
+order: 5
 date: 2026-02-05
 ---
 # Network Diagnostic Tools

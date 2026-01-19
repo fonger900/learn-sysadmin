@@ -1,5 +1,6 @@
 ---
 title: 3. IP Addressing and Subnetting
+order: 3
 date: 2026-02-03
 ---
 # IP Addressing and Subnetting
