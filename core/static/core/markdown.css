@@ -1,0 +1,49 @@
+/* Markdown Tables */
+.article-body table {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.article-body th,
+.article-body td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.article-body th {
+  font-weight: 600;
+  color: var(--text-color);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.article-body tr:hover td {
+  background-color: rgba(22, 27, 34, 0.5);
+}
+
+/* Markdown Code Blocks */
+.article-body pre {
+  background-color: #161b22;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.article-body code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  background-color: rgba(110, 118, 129, 0.2);
+}
+
+.article-body pre code {
+  background-color: transparent;
+  padding: 0;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
