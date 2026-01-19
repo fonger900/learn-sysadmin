@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<section class="topic-list">
+  <h1>All Topics</h1>
+  <div class="features">
+    {% for topic in topics %}
+    <div class="feature-card">
+      <h3><span class="icon">#</span> <a href="{% url 'article_list' topic.slug %}">{{ topic.name }}</a></h3>
+      <p>{{ topic.description }}</p>
+    </div>
+    {% empty %}
+    <p>No topics available yet.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

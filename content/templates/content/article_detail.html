@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+{% load content_extras %}
+
+{% block content %}
+<article class="full-article">
+  <div class="breadcrumb">
+    <a href="{% url 'topic_list' %}">Topics</a> /
+    <a href="{% url 'article_list' article.topic.slug %}">{{ article.topic.name }}</a> /
+    <span class="current">{{ article.title }}</span>
+  </div>
+
+  <header class="article-header">
+    <h1>{{ article.title }}</h1>
+    <div class="meta">
+      Published: {{ article.published_date|date:"F j, Y" }}
+    </div>
+  </header>
+
+  <div class="article-body">
+    {{ article.body|markdown }}
+  </div>
+</article>
+{% endblock %}

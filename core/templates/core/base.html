@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Learn Sysadmin{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'core/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="terminal-layout">
+        <header class="terminal-header">
+            <div class="logo">
+                <span class="prompt">$</span> <a href="{% url 'home' %}">./learn-sysadmin</a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'topic_list' %}">Topics</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="terminal-main">
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        <footer class="terminal-footer">
+            <p>&copy; {% now "Y" %} Learn Sysadmin. All systems operational.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

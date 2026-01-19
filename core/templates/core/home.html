@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="glitch" data-text="Master the System">Master the System</h1>
+    <p class="subtitle">Practical guides for the modern system administrator.</p>
+    <div class="cli-actions">
+      <a href="{% url 'topic_list' %}" class="btn-terminal">start_learning.sh</a>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="feature-card">
+    <h3><span class="icon">#</span> Linux Essentials</h3>
+    <p>Deep dives into the kernel, shell scripting, and core utilities.</p>
+  </div>
+  <div class="feature-card">
+    <h3><span class="icon">#</span> Networking</h3>
+    <p>Understanding the flow of data from physical layer to application.</p>
+  </div>
+  <div class="feature-card">
+    <h3><span class="icon">#</span> DevOps</h3>
+    <p>Automation, CI/CD, and infrastructure as code.</p>
+  </div>
+</section>
+{% endblock %}

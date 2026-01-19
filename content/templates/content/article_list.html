@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<section class="article-list">
+  <div class="breadcrumb">
+    <a href="{% url 'topic_list' %}">Topics</a> / <span class="current">{{ topic.name }}</span>
+  </div>
+
+  <h1>{{ topic.name }} Tutorials</h1>
+
+  <div class="articles-grid">
+    {% for article in articles %}
+    <article class="terminal-card">
+      <h2><a href="{% url 'article_detail' topic.slug article.slug %}">{{ article.title }}</a></h2>
+      <div class="meta">
+        <span class="date">{{ article.published_date|date:"Y-m-d" }}</span>
+      </div>
+    </article>
+    {% empty %}
+    <p>No articles found in this topic.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
